@@ -1,4 +1,4 @@
-baseurl = "https://leflambeur.github.io"
+baseurl = "https://leflambeur.github.io/rkvst-docs/"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
