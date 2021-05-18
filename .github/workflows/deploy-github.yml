@@ -20,7 +20,7 @@ jobs:
         run: npm ci
 
       - name: Check for linting errors
-        run: npm test
+        run: npm test --no-error-on-unmatched-pattern
 
       - name: Build production website
         run: npm run build
