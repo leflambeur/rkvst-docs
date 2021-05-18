@@ -1,5 +1,5 @@
-baseurl = "/"
-canonifyURLs = false
+baseurl = "https://leflambeur.github.io/rkvst-docs"
+canonifyURLs = true
 disableAliases = true
 disableHugoGeneratorInject = true
 enableEmoji = true
