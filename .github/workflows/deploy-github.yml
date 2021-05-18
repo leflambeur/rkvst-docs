@@ -19,9 +19,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Check for linting errors
-        run: npm test --no-error-on-unmatched-pattern
-
       - name: Build production website
         run: npm run build
 
