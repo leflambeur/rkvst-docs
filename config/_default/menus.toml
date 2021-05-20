@@ -1,14 +1,8 @@
 [[docs]]
-  name = "Overview"
-  weight = 1
-  identifier = "overview"
-  url = "/docs/overview/"
-
-[[docs]]
-  name = "Setup and Administration"
-  weight = 2
-  identifier = "setup-and-administration"
-  urls = "/docs/setup-and-administration/"
+  name = "Help"
+  weight = 60
+  identifier = "help"
+  url = "/docs/help/"
 
 [[docs]]
   name = "Quickstart"
@@ -17,15 +11,26 @@
   url = "/docs/quickstart/"
 
 [[docs]]
-  name = "Help"
-  weight = 60
-  identifier = "help"
-  url = "/docs/help/"
+  name = "Setup and Administration"
+  weight = 2
+  identifier = "setup-and-administration"
+  url = "/docs/setup-and-administration/"
+
+[[docs]]
+  name = "Overview"
+  weight = 1
+  identifier = "overview"
+  url = "/docs/overview/"
+
+[[main]]
+  name = "Contributing"
+  url = "/contributing/getting-started"
+  weight = 40
 
 [[main]]
   name = "Sales"
   url = "/sales/contactus"
-  weight = "30"
+  weight = 30
 
 [[main]]
   name = "Support"
