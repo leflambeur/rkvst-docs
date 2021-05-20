@@ -18,8 +18,8 @@ hljs.registerLanguage('ini', ini);
 hljs.registerLanguage('toml', ini);
 hljs.registerLanguage('yaml', yaml);
 hljs.registerLanguage('md', markdown);
-hljs.registerlanguage('go', go)
-hljs.registerlanguage('python', python)
+hljs.registerlanguage('go', go);
+hljs.registerlanguage('python', python);
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('pre code').forEach((block) => {
