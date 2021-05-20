@@ -6,9 +6,13 @@
 	{{- range $i, $e := $tabs -}}
 	  {{- $id := printf "%s-%d" $tab_set_id $i -}}
 	  {{- if (eq $i 0) -}}
-		<li class="nav-item"><a data-toggle="tab" class="nav-link active" href="#{{ $id }}" role="tab" aria-controls="{{ $id }}" aria-selected="true">{{- trim .name " " -}}</a></li>
+		<li class="nav-item">
+			<button data-bs-toggle="tab" class="nav-link active" href="#{{ $id }}" type="button" role="tab" aria-controls="{{ $id }}" aria-selected="true">{{- trim .name " " -}}</button>
+		</li>
 	  {{ else }}
-		<li class="nav-item"><a data-toggle="tab" class="nav-link" href="#{{ $id }}" role="tab" aria-controls="{{ $id }}">{{- trim .name " " -}}</a></li>
+		<li class="nav-item">
+			<button data-bs-toggle="tab" class="nav-link" href="#{{ $id }}" type="button" role="tab" aria-controls="{{ $id }}" aria-selected="false">{{- trim .name " " -}}</button>
+		</li>
 	  {{- end -}}
 {{- end -}}
 </ul>
