@@ -15,7 +15,7 @@ toc: true
 
 
 ``` 
-💡 You will only have access to the 'Manage Policies' screen if you 
+💡 You will only have access to the "Manage Policies" screen if you 
    are a Root User in your organization. 
 
    The Root User is typically the account which has signed in first.
@@ -91,14 +91,17 @@ println "This is tab 2."
 {{< /tab >}}}
 {{< /tabs >}}
 
-```python
-   def foo2():
-   bar = 16
-   return 64
-```
-
-```javascript
-   if (a > b) {
-   alert('Hello World');
-   }
-```
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
