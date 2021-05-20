@@ -1,3 +1,9 @@
+[[contributing]]
+  name = "Getting Started"
+  weight = 11
+  identifier = "getting-started"
+  url = "/contributing/getting-started"
+
 [[docs]]
   name = "Help"
   weight = 60
