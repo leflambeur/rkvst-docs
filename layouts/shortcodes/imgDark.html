@@ -1,7 +1,7 @@
 
 {{ if .Site.Params.options.darkMode -}}
   {{ $imgDrk := .Page.Resources.GetMatch (printf "*%s*" (.Get "srcDrk")) -}}
-  {{ $lqip := $imgDrk.Resize $.Site.Params.lqipWidth -}}
+  {{ $lqipDrk := $imgDrk.Resize $.Site.Params.lqipWidth -}}
 
   {{ $imgDrkSrc := "" -}}
   {{ $imgDrkSrcSet := slice -}}
@@ -19,7 +19,7 @@
   {{ $imgDrkSrcSet = (delimit $imgDrkSrcSet ",") -}}
 
   <figure{{ with .Get "class" }} class="{{.}}"{{ end }}></figure>
-    <img class="img-fluid lazyload blur-up" data-sizes="auto" src="{{ $lqip.RelPermalink }}" data-srcset="{{ $imgDrkSrcSet }}" width="{{ $imgDrk.Width }}" height="{{ $imgDrk.Height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}>
+    <img class="img-fluid lazyload blur-up" data-sizes="auto" src="{{ $lqipDrk.RelPermalink }}" data-srcset="{{ $imgDrkSrcSet }}" width="{{ $imgDrk.Width }}" height="{{ $imgDrk.Height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}>
     <noscript><img class="img-fluid" sizes="100vw" srcset="{{ $imgDrkSrcSet }}" src="{{ $imgDrk.RelPermalink }}" width="{{ $imgDrk.Width }}" height="{{ $imgDrk.Height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}></noscript>
     {{ with .Get "caption" }}<figcaption class="figure-caption">{{ . | safeHTML }}</figcaption>{{ end }}
   </figure>
