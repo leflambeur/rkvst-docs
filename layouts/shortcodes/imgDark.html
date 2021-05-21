@@ -15,7 +15,7 @@
   {{ $imgDrkSrcSet = $imgDrkSrcSet | append (printf "%s %dw" $srcDrkUrl .) -}}
 {{ end -}}
 {{ $imgDrkSrcSet = (delimit $imgDrkSrcSet ",") -}}
-<span class="toggle-dark">
+<span class="toggle-light">
   <figure{{ with .Get "class" }} class="{{.}}"{{ end }}></figure>
   <img class="img-fluid lazyload blur-up" data-sizes="auto" src="{{ $lqipDrk.RelPermalink }}" data-srcset="{{ $imgDrkSrcSet }}" width="{{ $imgDrk.Width }}" height="{{ $imgDrk.Height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}>
   <noscript><img class="img-fluid" sizes="100vw" srcset="{{ $imgDrkSrcSet }}" src="{{ $imgDrk.RelPermalink }}" width="{{ $imgDrk.Width }}" height="{{ $imgDrk.Height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}></noscript>
@@ -39,7 +39,7 @@
   {{ $imgSrcSet = $imgSrcSet | append (printf "%s %dw" $srcUrl .) -}}
 {{ end -}}
 {{ $imgSrcSet = (delimit $imgSrcSet ",") -}}
-<span class="toggle-light">
+<span class="toggle-dark">
   <figure{{ with .Get "class" }} class="{{.}}"{{ end }}>
     <img class="img-fluid lazyload blur-up" data-sizes="auto" src="{{ $lqip.RelPermalink }}" data-srcset="{{ $imgSrcSet }}" width="{{ $image.Width }}" height="{{ $image.Height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}>
     <noscript><img class="img-fluid" sizes="100vw" srcset="{{ $imgSrcSet }}" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}></noscript>
