@@ -48,15 +48,15 @@ In fact you can actually mix-and-match ABAC and OBAC in the same policy if you s
 
 1. Navigate to the 'Manage Policies' section on the Sidebar of the RKVST Dashboard
 
-.. image:: PolicyManage.png
+{{< img src="PolicyManage.png" alt="Rectangle" caption="<em>Managing Policies</em>" class="border-0" >}}
 
 2. Here you should be able to see any existing policies and you should also be able to select 'Add Policy'
 
-.. image:: PolicyAdd.png
+{{< img src="PolicyAdd.png" alt="Rectangle" caption="<em>Adding a Policy</em>" class="border-0" >}}
 
 3. When you add a Policy the following form will appear
 
-.. image:: PolicyForm.png
+{{< img src="PolicyForm.png" alt="Rectangle" caption="<em>Policy Web Form</em>" class="border-0" >}}
 
 4. Here you can begin applying the filters you wish to apply so that your policy affects the right assets, in this case we're going to apply the policy to any assets in the 'UK Factory' Location we created earlier
 
@@ -81,12 +81,3 @@ For comparison with our Root User Jill:
 We can see that Mandy is able to view the Weight Attribute as specified in the policy where as Jill can see everything on the Asset.
 
 ABAC and OBAC Policy making is an extensive topic, there are many fine grained controls you can put in. To find out more about them, head over to the IAM Policies Section.
-
-{{< tabs name="tab_with_code" >}}
-{{{< tab name="Tab 1" codelang="bash" >}}
-echo "This is tab 1."
-{{< /tab >}}
-{{< tab name="Tab 2" codelang="go" >}}
-println "This is tab 2."
-{{< /tab >}}}
-{{< /tabs >}}

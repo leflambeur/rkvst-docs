@@ -14,21 +14,21 @@ code {
 }
 
 pre {
-  margin: 2rem 0;
+  margin: 2rem 0rem;
 }
 
 pre code {
   display: block;
   overflow-x: auto;
   line-height: $line-height-base;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.5rem;
   tab-size: 4;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
 }
 
 .hljs {
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.5rem;
 }
 
 @include media-breakpoint-down(sm) {
@@ -73,7 +73,7 @@ pre code::-webkit-scrollbar-thumb:hover {
   border-radius: 0.25rem;
   padding: 0 8px 8px;
 
-  border: 0.2px solid #FFCDD2;
+  border: 1px solid $gray-300;
   &:first-of-type.active {
     border-top-left-radius: 0;
   }

@@ -1,7 +1,7 @@
 ---
 title: "When Who Did What to a Thing?"
-description: ""
-lead: ""
+description: "Understanding the Core Principles of RKVST"
+lead: "Understanding the Core Principles of RKVST"
 date: 2020-11-12T13:26:54+01:00
 lastmod: 2020-11-12T13:26:54+01:00
 draft: false

@@ -1,14 +1,32 @@
 [[contributing]]
+  name = "Formatting Content"
+  weight = 3
+  identifier = "formatting-content"
+  url = "/contributing/formatting-content/"
+
+[[contributing]]
+  name = "Adding Content"
+  weight = 2
+  identifier = "adding-content"
+  url = "/contributing/adding-content/"
+
+[[contributing]]
   name = "Getting Started"
-  weight = 11
+  weight = 1
   identifier = "getting-started"
-  url = "/contributing/getting-started"
+  url = "/contributing/getting-started/"
 
 [[docs]]
   name = "Help"
   weight = 60
   identifier = "help"
   url = "/docs/help/"
+
+[[docs]]
+  name = "User Patterns"
+  weight = 4
+  identifier = "user-patterns"
+  url = "/docs/user-patterns/"
 
 [[docs]]
   name = "Quickstart"
