@@ -43,7 +43,7 @@ Note: If you do not have npm installed please use the following guide:
 # brew install npm
 {{< /tab >}}
 {{< /tabs >}}
-<br />
+<br>
 4. To run a local RKVST Docs Server it is advisable to use the `jitsuin-doks` wrapper
 
 ```console
@@ -55,7 +55,7 @@ This will build a local version of the server that can be accessed at [http://lo
 You can keep this running in the background while making any edits and the developer server should automatically pick up your changes for you.
 
 {{< note >}}
-The development server logs to stdout by default, you will need to keep the Terminal Session open while in use
+The development server logs to stdout by default, you will need to keep the Terminal Session open while in use.
 {{< /note>}}
 
 5. To stop the Doks Server use `ctrl+c` in the Terminal Session you started it in.
