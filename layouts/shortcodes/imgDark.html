@@ -36,8 +36,8 @@
 {{ $imgDrkSrcSet = (delimit $imgDrkSrcSet ",") -}}
 
 <figure{{ with .Get "class" }} class="{{.}}"{{ end }}>
-  <source srcset = '{{ $imgDrkSrcSet }}' media="(prefers-color-scheme: dark)">
   <img class="img-fluid lazyload blur-up" data-sizes="auto" src="{{ $lqip.RelPermalink }}" data-srcset="{{ $imgSrcSet }}" width="{{ $image.Width }}" height="{{ $image.Height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}>
+  <source srcset = '{{ $imgDrkSrcSet }}' data-srcset="{{ $imgDrkSrcSet }}" width="{{ $imgDrk.Width }}" height="{{ $imgDrk.Height }}" media="(prefers-color-scheme: dark)">
   <noscript><img class="img-fluid" sizes="100vw" srcset="{{ $imgSrcSet }}" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" {{ with .Get "alt" }}alt="{{.}}"{{ end }}></noscript>
   {{ with .Get "caption" }}<figcaption class="figure-caption">{{ . | safeHTML }}</figcaption>{{ end }}
 </figure>
