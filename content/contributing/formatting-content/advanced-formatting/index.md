@@ -230,7 +230,7 @@ We have added some customised shortcode that allows you to specify two individua
 The behaviour matches the original image shortcode but adds an extra `srcDrk` variable which refers to the Dark Mode image you wish to add 
 
 ```go
-{{</* img src="Jitsuin_Logo_RGB.png" srcDrk="Jitsuin_WhtType_RGB.png" alt="Rectangle" caption="<em>Jitsuin Dark Mode Logo Example</em>" class="border-0" */>}}
+{{</* imgDark src="Jitsuin_Logo_RGB.png" srcDrk="Jitsuin_WhtType_RGB.png" alt="Rectangle" caption="<em>Jitsuin Dark Mode Logo Example</em>" class="border-0" */>}}
 ```
 
 {{< imgDark src="Jitsuin_Logo_RGB.png" srcDrk="Jitsuin_WhtType_RGB.png" alt="Rectangle" caption="<em>Jitsuin Dark Mode Logo Example</em>" class="border-0" >}}
