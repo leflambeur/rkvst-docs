@@ -221,7 +221,7 @@ Your image should be saved to the same directory as the article's index.md to us
 
 {{< img src="Jitsuin_Logo_RGB_Spot.png" alt="Rectangle" caption="<em>Jitsuin Logo Example</em>" class="border-0" >}}
 
-### Light Mode and Dark Mode Images
+### Light Mode and Dark Mode Images - WIP
 
 Some pictures may not be legible when using either light mode or dark mode
 
