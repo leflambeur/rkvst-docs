@@ -9,6 +9,7 @@ import yaml from 'highlight.js/lib/languages/yaml';
 import markdown from 'highlight.js/lib/languages/markdown';
 import go from 'highlight.js/lib/languages/go';
 import python from 'highlight.js/lib/languages/python';
+import console from 'highlight.js/lib/languages/shell';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('json', json);
@@ -18,6 +19,7 @@ hljs.registerLanguage('ini', ini);
 hljs.registerLanguage('toml', ini);
 hljs.registerLanguage('yaml', yaml);
 hljs.registerLanguage('md', markdown);
+hljs.registerLanguage('console', console);
 hljs.registerLanguage('go', go);
 hljs.registerLanguage('python', python);
 
