@@ -21,6 +21,7 @@ $navbar-dark-active-color:          $link-color-dark;
 body.dark {
   background: $body-bg-dark;
   color: $body-color-dark;
+  $accordion-border-color:  $body-bg-dark;
 }
 
 body.dark a {
@@ -274,7 +275,6 @@ body.dark .card.bg-light {
 
 body.dark .accordian {
   background: $body-bg-dark;
-  border: 1px solid $border-dark;
 }
 
 body.dark .accordion-item {
@@ -315,6 +315,7 @@ body.dark .accordion-header.bg-light {
 body.dark .accordion-body {
   background: $body-overlay-dark;
   color: $body-color-dark;
+  border: $jitsuin-red;
 }
 
 body.dark .accordion-body.bg-light {
