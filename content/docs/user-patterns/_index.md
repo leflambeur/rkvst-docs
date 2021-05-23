@@ -12,5 +12,3 @@ menu:
 weight: 999
 toc: true
 ---
-
-{{< img src="user-patterns.jpg" alt="User Patterns" caption="User Patterns" >}}
