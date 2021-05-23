@@ -7,11 +7,11 @@
 	  {{- $id := printf "%s-%d" $tab_set_id $i -}}
 	  {{- if (eq $i 0) -}}
 		<li class="nav-item">
-			<button data-bs-toggle="tab" class="nav-link active" href="#{{ $id }}" type="button" role="tab" aria-controls="{{ $id }}" aria-selected="true">{{- trim .name " " -}}</button>
+			<button data-bs-toggle="tab" class="nav-link active" data-bs-target="#{{ $id }}" type="button" role="tab" aria-controls="{{ $id }}" aria-selected="true">{{- trim .name " " -}}</button>
 		</li>
 	  {{ else }}
 		<li class="nav-item">
-			<button data-bs-toggle="tab" class="nav-link" href="#{{ $id }}" type="button" role="tab" aria-controls="{{ $id }}" aria-selected="false">{{- trim .name " " -}}</button>
+			<button data-bs-toggle="tab" class="nav-link" data-bs-target="#{{ $id }}" type="button" role="tab" aria-controls="{{ $id }}" aria-selected="false">{{- trim .name " " -}}</button>
 		</li>
 	  {{- end -}}
 {{- end -}}
@@ -20,9 +20,9 @@
 {{- range $i, $e := $tabs -}}
 {{- $id := printf "%s-%d" $tab_set_id $i -}}
 {{- if (eq $i 0) -}}
-  <div id="{{ $id }}" class="tab-pane show active" role="tabpanel" aria-labelledby="{{ $id }}">
+  <div id="{{ $id }}" class="tab-pane fade show active" role="tabpanel" aria-labelledby="{{ $id }}">
 {{ else }}
-  <div id="{{ $id }}" class="tab-pane" role="tabpanel" aria-labelledby="{{ $id }}">
+  <div id="{{ $id }}" class="tab-pane fade" role="tabpanel" aria-labelledby="{{ $id }}">
 {{ end }}
 <p>
 	{{- with .content -}}
@@ -34,7 +34,7 @@
 				{{- if ne .ResourceType "page" -}}
 				{{- /* Assume it is a file that needs code highlighting. */ -}}
 				{{- $codelang := $e.codelang | default ( path.Ext .Name | strings.TrimPrefix ".") -}}
-				{{- highlight $codelang .Content  "" -}}
+				{{- highlight  .Content  "" -}}
 				{{- else -}}
 					{{- .Content -}}
 				{{- end -}}
