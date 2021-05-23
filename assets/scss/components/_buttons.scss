@@ -51,24 +51,8 @@ body.dark .toggle-dark {
 }
 
 .btn-clipboard {
-  display: none;
-}
-
-@include media-breakpoint-up(md) {
-  .doks-clipboard {
-    position: relative;
-    float: right;
-  }
-
-  .btn-clipboard {
-    position: absolute;
-    top: 1rem;
-    right: 0.25rem;
-    z-index: 10;
-    display: block;
-    padding: 0.25rem 0.5rem;
-    font-size: $font-size-sm;
-  }
+  display: block;
+  position: relative;
 }
 
 .copy-status::after {
@@ -80,12 +64,12 @@ body.dark .toggle-dark {
 .copy-status:hover::after {
   content: "Copy";
   display: block;
-  color: $pink-500;
+  color: $jitsuin-red;
 }
 
 .copy-status:focus::after,
 .copy-status:active::after {
   content: "Copied";
   display: block;
-  color: $pink-500;
+  color: $jitsuin-red;
 }
