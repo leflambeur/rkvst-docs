@@ -9,7 +9,7 @@ images: []
 menu: 
   contributing:
     parent: "formatting-content"
-weight: 4
+weight: 6
 toc: true
 ---
 

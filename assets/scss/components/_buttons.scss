@@ -53,8 +53,8 @@ body.dark .toggle-dark {
 .btn-clipboard{
   display: block;
   position: absolute;
-  right: 20px
-
+  right: 1px;
+  font-size: $font-size-base * 0.72;
 }
 
 

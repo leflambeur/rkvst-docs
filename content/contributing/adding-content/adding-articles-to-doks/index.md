@@ -1,5 +1,5 @@
 ---
-title: "Adding Articles to Doks"
+title: "Adding Articles to Jitsuin Docs"
 description: ""
 date: 2021-05-20T18:34:21+01:00
 lastmod: 2021-05-20T18:34:21+01:00
@@ -7,10 +7,14 @@ draft: false
 menu:
   contributing:
     parent: "adding-content"
-weight: 2
+weight: 3
 images: []
 toc: true
 ---
+
+{{< note >}}
+**Note:** For navigation purposes any new content is automatically added to the top level `content` folder and then follows the path you specify from there.
+{{< /note >}}
 
 1. To add a New Article use the `jitsuin-doks` command
 
@@ -20,8 +24,7 @@ jitsuin-doks create contributing/adding-content/adding-articles-to-doks/index.md
 Here you can see we have specified the `contributing` area, the `adding content` section and the name of our new article with a non-underscored `index.md` to indicate this is an article
 
 {{< note >}}
-**Note:** The name of each folder should be sluggified 
-The command can then prefill the metadata accordingly
+**Note:** The name of each folder should be sluggified, the command can then prefill the metadata accordingly.
 {{< /note >}}
 
 2. Edit the newly created document and you should see a metadata template that has been prefilled at the top of the article

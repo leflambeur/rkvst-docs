@@ -9,7 +9,7 @@ images: []
 menu: 
   contributing:
     parent: "formatting-content"
-weight: 5
+weight: 7
 toc: true
 ---
 
@@ -60,6 +60,8 @@ Supported Languages:
 
 If you want to add a simple codeblock for a specific example, say it is a single bash command or some example markdown you can use three backticks `` ``` `` as a fence around the block.
 
+By specifying the language at the beginning of the code block the website will know add the `copy-to-clipboard` functionality to the block.
+
 <pre><code>
 ```md
 This is markdown.
@@ -90,6 +92,8 @@ Tabbed Codeblocks are not built into either Doks or Markdown, we instead use a c
 
 Each `Tabs` object on a page should have a unique identifier, you should also specify the language syntax highlighting to use per tab, this should be reflected in the title of the tab where appropriate.
 
+Similarly to the Simple Codeblocks by adding the language the website will know to add the `copy to clipboard` functionality to the block.
+
 ```go
 {{</* tabs name="tab_with_code" >}}
 {{{< tab name="Bash" codelang="bash" >}}
@@ -112,9 +116,19 @@ func main() {
 {{< /tab >}}}
 {{< /tabs >}}
 
-## Adding OpenAPI Docs (Swagger v3)
+### Adding OpenAPI Docs
 
-The OpenAPI
+OpenAPI (formely Swagger) is an open standard for documenting which methods, parameters and responses are available for REST API Endpoints in `JSON` format.
+
+Jitsuin RKVST maintains up-to-date records of every API we present to users in an OpenAPI format, these are fairly plain however so we have written a custom shortcode to template the details in a more presentable package.
+
+There will be no rendered output here as it will otherwise interrupt the document, however here is the reference to include when making an OpenAPI Page:
+
+```go
+{{</* openapi url="https://raw.githubusercontent.com/jitsuin-inc/archivist-docs/master/doc/openapi/access_policies.swagger.json" */>}}
+```
+
+This shortcode will fetch the docs from the specified url and then render it completely fully templating out each method and endpoint, the parameters, responses and examples.
 
 ## Callouts and Blocked Quotes
 

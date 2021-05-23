@@ -1,5 +1,5 @@
 ---
-title: "Adding Content Sections to Doks"
+title: "Adding Content Sections to Jitsuin Docs"
 description: ""
 date: 2021-05-20T12:03:27+01:00
 lastmod: 2021-05-20T12:03:27+01:00
@@ -7,10 +7,14 @@ draft: false
 menu:
   contributing:
     parent: "adding-content"
-weight: 3
+weight: 4
 images: []
 toc: true
 ---
+
+{{< note >}}
+**Note:** For navigation purposes any new content is automatically added to the top level `content` folder and then follows the path you specify from there.
+{{< /note >}}
 
 1. To add a New Content Section use the `jitsuin-doks` command
 
