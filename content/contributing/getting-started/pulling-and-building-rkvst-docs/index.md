@@ -14,40 +14,40 @@ toc: true
 
 1. To begin pull the latest RKVST docs from Github.
 
-```console
-$ git clone <the final resting place>
+```bash
+git clone <the final resting place>
 ```
 
 2. Move into the directory.
 
-```console
-$ cd rkvst-doks
+```bash
+cd rkvst-doks
 ```
 
 3. Install the DOKS Dependencies.
 
-```console
-$ npm install
+```bash
+npm install
 ```
 
 Note: If you do not have npm installed please use the following guide:
 
 {{< tabs name="tab_with_code" >}}
-{{{< tab name="Ubuntu" codelang="console" >}}
-# apt install npm
+{{{< tab name="Ubuntu" codelang="bash" >}} 
+apt install npm
 {{< /tab >}}
-{{< tab name="Cent OS/RHEL" codelang="console" >}}
-# yum install npm
+{{< tab name="Cent OS/RHEL" codelang="bash" >}}
+yum install npm 
 {{< /tab >}}}
-{{< tab name="MacOS" codelang="console">}}
-# brew install npm
+{{< tab name="MacOS" codelang="bash" >}}
+brew install npm 
 {{< /tab >}}
 {{< /tabs >}}
 <br>
 4. To run a local RKVST Docs Server it is advisable to use the `jitsuin-doks` wrapper
 
-```console
-$ jistuin-doks start
+```bash
+jistuin-doks start
 ```
 
 This will build a local version of the server that can be accessed at [http://localhost:1313](https://localhost:1313).
@@ -55,7 +55,7 @@ This will build a local version of the server that can be accessed at [http://lo
 You can keep this running in the background while making any edits and the developer server should automatically pick up your changes for you.
 
 {{< note >}}
-The development server logs to stdout by default, you will need to keep the Terminal Session open while in use.
+**Note:** The development server logs to stdout by default, you will need to keep the Terminal Session open while in use.
 {{< /note>}}
 
 5. To stop the Doks Server use `ctrl+c` in the Terminal Session you started it in.

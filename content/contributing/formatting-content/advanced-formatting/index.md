@@ -74,12 +74,12 @@ This is markdown.
 And with Bash
 <pre><code>
 ```bash
-$ echo "This is a Bash Example."
+echo "This is a Bash Example."
 ```
 </code></pre>
 
 ```bash
-$ echo "This is a Bash Example."
+echo "This is a Bash Example."
 ```
 
 ### Tabbed Codeblock
@@ -100,11 +100,13 @@ println "This is a Go Example."
 ```
 
 {{< tabs name="tab_with_code" >}}
-{{{< tab name="Bash" codelang="bash" >}}
-echo "This is a Bash Example."
+{{< tab name="Bash" codelang="bash" >}}
+echo "this is a command"
 {{< /tab >}}
 {{< tab name="Go" codelang="go" >}}
-println "This is a Go Example."
+func main() {
+    fmt.Println("hello world")
+}
 {{< /tab >}}}
 {{< /tabs >}}
 
@@ -119,13 +121,13 @@ To add a note use the following syntax, notes are always highlighted by a left *
 
 ```go
 {{</* note >}}
-This is a note.
+**Note:** This is a note.
 {{< /note */>}}
 ```
 
 
 {{< note >}}
-This is a note.
+**Note:** This is a note.
 {{< /note >}}
 
 ### Cautions
@@ -134,12 +136,12 @@ To add a caution use the following syntax, cautions are always highlighted by a 
 
 ```go
 {{</* caution >}}
-This is a caution.
+**Caution:** This is a caution.
 {{< /caution */>}}
 ```
 
 {{< caution >}}
-This is a caution.
+**Caution:** This is a caution.
 {{< /caution >}}
 
 ### Warnings
@@ -148,12 +150,12 @@ To add a warning use the following syntax, warnings are always highlighted by a 
 
 ```go
 {{</* warning >}}
-This is a warning.
+**Warning:** This is a warning.
 {{< /warning */>}}
 ```
 
 {{< warning >}}
-This is a warning.
+**Warning:** This is a warning.
 {{< /warning >}}
 
 ### Block Quotes

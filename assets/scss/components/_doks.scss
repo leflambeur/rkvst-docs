@@ -49,8 +49,8 @@ body.dark .hljs {
   color: $body-color-dark;
 }
 
-body.dark .hljs-string,
 body.dark .hljs-variable,
+body.dark .hljs-string,
 body.dark .hljs-template-variable,
 body.dark .hljs-symbol,
 body.dark .hljs-bullet,
@@ -60,3 +60,4 @@ body.dark .hljs-attribute,
 body.dark .hljs-link {
   color: $jitsuin-red;
 }
+

@@ -88,6 +88,18 @@ not only the concept in mind, but other key related features;
 not to mention the greater range of expression.
 ```
 
+### Quotes
+
+Quotes should use single quote marks `'` instead of Speech Marks `"`.
+
+'This is a Quote'
+
+Single Quotes are permitted when referring to a colloquial or adopted term such as 'Code Fences' that is not a code reference but you may wish to highlight.
+
+If a nested quote is being used then you may use `"`.
+
+'Of course, he said "Let's write out an example".'
+
 ### Emphasis
 
 Emphasis should be used minimally but can be effective to highlight key words and phrases inside of a sentence that need specific attention.
@@ -172,7 +184,7 @@ Inline code is specified using backticks `` ` ``, it is preferable to label any 
 
 For example:
 
-```
+```md
 note we have included the values `arc_display_name`, `arc_description` and `arc_home_location_identity`
 ```
 
@@ -180,38 +192,125 @@ note we have included the values `arc_display_name`, `arc_description` and `arc_
 
 ### Standard Codeblocks
 
-Standard codeblocks are represented using standard markdown with three backticks `` ``` `` as 'code fences'.
+Standard codeblocks are represented using markdown with three backticks `` ``` `` as 'code fences'.
 
 The Docs have built in syntax highlighting using `highlight.js` which allows us to add a language to each codeblock for proper rendering in the following format:
 
 <pre><code>
-```md
+```bash
 ```
-</code></pre>
+</pre></code>
 
-There is a list of Languages available in the [Advanced Formatting Section](../advanced-formatting/)
+Here is an example of the full Syntax Highlighting:
+
+```bash
+#!/bin/bash
+
+###### CONFIG
+ACCEPTED_HOSTS="/root/.hag_accepted.conf"
+BE_VERBOSE=false
+
+if [ "$UID" -ne 0 ]
+then
+ echo "Superuser rights required"
+ exit 2
+fi
+
+genApacheConf(){
+ echo -e "# Host ${HOME_DIR}$1/$2 :"
+}
+
+echo '"quoted"' | tr -d \" > text.txt
+```
+
+There is a list of Languages available in the [Advanced Formatting Section](../advanced-formatting/).
 
 It is required that each codeblock has a language associated with it, if in doubt a standard default to use is the markdown syntax (`md`).
 
-Standard codeblocks are especially useful for representing shell commands in documentation where there is typically little variance across platforms.
+It is preferable that Standard Codeblocks are used for representing shell commands and API Responses in documentation where there is typically little variance across platforms, and not scripting examples which should use Tabbed Codeblocks instead.
 
-Commands should use the `console` syntax highlight and use a standard format to represent a necessity for sudo or admin access when being run.
+### Shell Commands
 
-The following is an example of both a normal command and sudo command:
+Commands should use Standard Codeblocks with the `bash` syntax highlight, we don't permit adding a leading command prompt such as `#` or `$`.
 
-```console
-$ echo "this is a normal command"
+<pre><code>
+```bash
+echo "this is a command"
 ```
+</code></pre>
 
-```console
-# echo "this is a sudo command"
+```bash
+echo "this is a command"
 ```
-
-Note the leading characters being a dollar sign `$` for normal commands and a hash `#` for sudo.
-
-If we use the `bash` syntax highlight it will mark the sudo command as a comment.
 
 ### Tabbed Codeblocks
+
+Where possible when writing code examples you should use Tabbed Codeblocks to offer examples in multiple languages that other users may prefer.
+
+This creates a much more accessible and useful documentation platform for any and all users.
+
+Where possible the following languages should be offered as examples in this order:
+
+* `json` - a raw JSON Example of the data being submitted
+* `bash` - curl implementation of interacting with the endpoint
+* `python` - python implementation of interacting with the endpoint
+* `go` -  go implementation of interacting with the endpoint
+
+As Jitsuin RKVST is primarily an API there are different requirements for each type of request:
+
+{{< tabs name="tabbed_api_requirements" >}}
+{{< tab name="GET" codelang="md" >}}
+Minimum:
+* bash
+
+Preferably:
+* bash
+* python
+* go
+{{< /tab >}}
+{{< tab name="POST" codelang="md" >}}
+Minimum:
+* json
+* bash
+
+Preferably:
+* json
+* bash
+* python
+* go
+{{< /tab >}}}
+{{< tab name="PUT" codelang="md" >}}
+Minimum:
+* json
+* bash
+
+Preferably:
+* json
+* bash
+* python
+* go
+{{< /tab >}}}
+{{< tab name="PATCH" codelang="md" >}}
+Minimum:
+* json
+* bash
+
+Preferably:
+* json
+* bash
+* python
+* go
+{{< /tab >}}}
+{{< tab name="DELETE" codelang="md" >}}
+Minimum:
+* bash
+
+Preferably:
+* bash
+* python
+* go
+{{< /tab >}}}
+{{< /tabs >}}
 
 ## Callouts and Blockquotes
 
@@ -234,3 +333,4 @@ If we use the `bash` syntax highlight it will mark the sudo command as a comment
 ### Standard Images
 
 ### Light Mode and Dark Mode Images
+

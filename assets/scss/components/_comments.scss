@@ -36,7 +36,7 @@ blockquote {
     border-left-width: 0.5em;
     background: #fff;
     color: #000;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
@@ -44,11 +44,11 @@ blockquote {
     border-radius: calc(1em/3);
   }
   .callout.caution {
-    border-left-color: #ffaf09;
+    border-left-color: $jitsuin-yellow;
   }
 
   .callout.note {
-    border-left-color: #a112ff;
+    border-left-color: $jitsuin-purple;
   }
 
   .callout.warning {
@@ -67,7 +67,7 @@ blockquote {
     border-left-width: 0.5em;
     background: $body-bg-dark;
     color: $gray-300;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   }

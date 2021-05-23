@@ -15,14 +15,14 @@ toc: true
 1. To add a New Content Section use the `jitsuin-doks` command
 
 ```bash
-$ jitsuin-doks create docs/user-patterns/_index.md
+jitsuin-doks create docs/user-patterns/_index.md
 ```
 Here you can see we have specified the `docs` area, the name of our new section and we use the underscored `_index.md` to indicate it is an indexing section of content
 
-```
-💡 The name of each folder should be sluggified 
+{{< note >}}
+**Note:** The name of each folder should be sluggified 
    The command can then prefill the metadata accordingly
-```
+{{< /note >}}
 
 2. This will create the space in the docs folder for your new section, to then make it visible in the sidebar add it to `config/_default/menus.toml` using the following format:
 

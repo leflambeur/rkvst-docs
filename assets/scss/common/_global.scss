@@ -215,7 +215,7 @@ body {
 // https://fossheim.io/writing/posts/css-text-gradient/
 .gradient-text {
   background-color: $primary;
-  background-image: linear-gradient(90deg, $primary, $blue-300 50%, $pink-500);
+  background-image: linear-gradient(90deg, $jitsuin-red, $jitsuin-red 50%, $jitsuin-red);
   background-size: 100%;
   background-repeat: repeat;
   -webkit-background-clip: text;
@@ -226,4 +226,12 @@ body {
 
 .katex {
   font-size: $font-size-md;
+}
+
+.accordian.button{
+  border: 1px solid $jitsuin-red;
+}
+
+.accordian.button.bg.light{
+  border: 1px solid $jitsuin-red;
 }

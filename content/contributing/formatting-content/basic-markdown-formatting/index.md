@@ -13,21 +13,21 @@ weight: 4
 toc: true
 ---
 
-Doks uses Goldmark markdown which is primarily Github-flavoured
+Doks uses Goldmark markdown which is primarily Github-flavoured.
 
-The examples below follow our [Style Guide](../style-guide) 
+The examples below follow our [Style Guide](../style-guide).
 
 ## Headings
 
 {{< warning >}}
-We do not allow `# Header 1` sizing, this should only be added by the title of the article, use `## Header 2` sizing and below for in-article headers
+**Warning:** We do not allow `# Header 1` sizing, this should only be added by the title of the article, use `## Header 2` sizing and below for in-article headers.
 {{< /warning >}}
 
-Headings in markdown can be added using the `#` character at the beginning of a line of text, the more`#` you use the smaller the heading will be
+Headings in markdown can be added using the `#` character at the beginning of a line of text, the more`#` you use the smaller the heading will be.
 
-All headers, once rendered, in an article can be permalinked to easily share a specific topic quickly
+All headers, once rendered, in an article can be permalinked to easily share a specific topic quickly.
 
-```markdown
+```md
 ## Example Header 2
 ### Example Header 3
 ```
@@ -39,11 +39,11 @@ This would render as:
 
 ## Emphasis
 
-Markdown allows you to add emphasis to text in line using `*` at both ends of some text
+Markdown allows you to add emphasis to text in line using `*` at both ends of some text.
 
-Emphasis includes Bolding and Italicizing but ***not*** Underlining
+Emphasis includes Bolding and Italicizing but ***not*** Underlining.
 
-```markdown
+```md
 *This is italicized*
 **This is bolded**
 ***This is both italicized and bolded***
@@ -55,9 +55,9 @@ Emphasis includes Bolding and Italicizing but ***not*** Underlining
 
 ## Linebreaks
 
-While Markdown is usually very respectful of where a new line should be implemented it is sometimes necessary to add artifical breaks
+While Markdown is usually very respectful of where a new line should be implemented it is sometimes necessary to add artifical breaks.
 
-This can be done using the `<br>` tag
+This can be done using the `<br>` tag.
 
 ```md
 This is<br> a line break
@@ -66,13 +66,13 @@ This is<br> a line break
 
 ## Creating Lists
 
-You can create both ordered lists and unordered lists with markdown
+You can create both ordered lists and unordered lists with markdown.
 
 ### Ordered Lists
 
-Ordered lists can be created either specific numbers
+Ordered lists can be created either specific numbers.
 
-```markdown
+```md
 1. This is 
 2. An Example
 3. Of an Ordered List
@@ -83,9 +83,9 @@ Ordered lists can be created either specific numbers
 
 ### Unordered Lists
 
-Unordered Lists can be created using `*` at the beginning of a line
+Unordered Lists can be created using `*` at the beginning of a line.
 
-```markdown
+```md
 * This is
 * An Example
 * Of an Unordered List
@@ -97,9 +97,9 @@ Unordered Lists can be created using `*` at the beginning of a line
 
 ### Sub-Items in a List
 
-You can also make sub-items in either ordered or unordered lists indenting by a tab
+You can also make sub-items in either ordered or unordered lists indenting by a tab.
 
-```markdown
+```md
 * This is
 * An Example
   * Of sub items

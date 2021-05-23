@@ -15,14 +15,14 @@ toc: true
 1. To add a New Article use the `jitsuin-doks` command
 
 ```bash
-$ jitsuin-doks create contributing/adding-content/adding-articles-to-doks/index.md
+jitsuin-doks create contributing/adding-content/adding-articles-to-doks/index.md
 ```
 Here you can see we have specified the `contributing` area, the `adding content` section and the name of our new article with a non-underscored `index.md` to indicate this is an article
 
-
->💡 The name of each folder should be sluggified 
->   The command can then prefill the metadata accordingly
-
+{{< note >}}
+**Note:** The name of each folder should be sluggified 
+The command can then prefill the metadata accordingly
+{{< /note >}}
 
 2. Edit the newly created document and you should see a metadata template that has been prefilled at the top of the article
 

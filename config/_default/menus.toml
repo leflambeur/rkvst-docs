@@ -1,4 +1,10 @@
 [[contributing]]
+  name = "Playground"
+  weight = 5
+  identifier = "playground"
+  url = "/contributing/playground/"
+
+[[contributing]]
   name = "Formatting Content"
   weight = 3
   identifier = "formatting-content"

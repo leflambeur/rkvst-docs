@@ -1,0 +1,87 @@
+<!-- 
+hugo OpenAPI reference documentation generator
+Params:
+  url: the public URL of the OpenAPI .json specification
+Generates reference documentation based on the provided OpenAPI specification. Use with: {{/*
+  {{< generate-openapi-ref-docs url="your-.json-file-url" >}}
+  */}}
+  Example: {{/*
+  {{< generate-openapi-ref-docs url="https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json" >}}
+  */}}
+If your OpenAPI spec is not hosted at an accessible url endpoint, you can
+store a copy of your OpenAPI specification in the root-level site /data folder.
+Then delete the first and last lines of the code block below, and replace the
+$openapi variable declaration at the beginning with: {{/*
+{{ $openapi := .Site.Data.fileName }}
+*/}}
+where fileName is the file's name with `.json` removed from the end
+ -->
+ {{ $.Scratch.Set "id" 0 }}
+ {{ with $.Params.url }}
+  {{ $openapi := getJSON $.Params.url }}
+  <div class="$openapi-spec-content">
+    <h2>{{ $openapi.info.title }} version {{ $openapi.info.version }}</h2>
+    <div class="description">
+      <p>{{ $openapi.info.description }}</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: stretch; width: 100%;">
+      {{ range $path, $pathMethods := $openapi.paths }}
+        {{ range $pathMethod, $pathDetails := $pathMethods }}
+          {{ $.Scratch.Set "id" (add ($.Scratch.Get "id") 1) }}
+              <div class="accordion" id='{{ $.Scratch.Get "id" }}'>
+                <div class="accordion-item">
+                  <h4 class="accordion-header" id='header{{ $.Scratch.Get "id" }}'>
+                      <button class="accordion-button" data-bs-toggle="collapse" data-bs-target='#collapse{{ $.Scratch.Get "id" }}' aria-expanded="true" aria-controls='collapse{{ $.Scratch.Get "id" }}'>
+                        <span style="text-transform: uppercase; color: #ed1c24;">{{ $pathMethod }}</span>&nbsp;&nbsp;<span style="width: 100%;">{{ $path }}</span>
+                      </button>
+                  </h4>
+                  <div id='collapse{{ $.Scratch.Get "id" }}' class="accordion-collapse collapse" aria-labelledby='header{{ $.Scratch.Get "id" }}' data-parent="#accordion">
+                  <div class="accordion-body">
+                    <div style="width: 100%;">
+                      <h4><span style="color: #ed1c24; text-transform: uppercase;">{{ $pathMethod }}</span>&nbsp;&nbsp;<span>{{ $path }}</span></h4>
+                      <h5>{{ $pathDetails.summary }}</h5>
+                      <p><a href="{{ $pathDetails.externalDocs.url }}">{{ $pathDetails.externalDocs.description}}</a></p>
+                      <p>Description: {{ $pathDetails.description | markdownify }}</p>
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Responses</th>
+                            <th scope="col">Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{range $responseCode, $responseDetails := $pathDetails.responses }}
+                            <tr><th>{{ $responseCode | markdownify}}</th><td>{{ $responseDetails.description | markdownify }}</td>
+                          {{ end }}
+                        </tbody>
+                      </table>
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Parameter</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Required</th>
+                            <th scope="col">Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{range $pathParameter := $pathDetails.parameters }}
+                          <tr>
+                            <th>{{ $pathParameter.name | markdownify}}</th>
+                            <td>{{ $pathParameter.type | markdownify }}</td>
+                            <td>{{ $pathParameter.required | markdownify }}</td>
+                            <td>{{ $pathParameter.description | markdownify }}</td>             
+                          {{ end }}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    </div>
+  </div>
+</div>
