@@ -24,11 +24,10 @@ where fileName is the file's name with `.json` removed from the end
     <div class="description">
       <p>{{ $openapi.info.description }}</p>
     </div>
-    <div style="display: flex; flex-direction: column; align-items: stretch; width: 100%;">
+      <div class="accordion" id='{{ $.Scratch.Get "id" }}'></div>
       {{ range $path, $pathMethods := $openapi.paths }}
         {{ range $pathMethod, $pathDetails := $pathMethods }}
           {{ $.Scratch.Set "id" (add ($.Scratch.Get "id") 1) }}
-              <div class="accordion" id='{{ $.Scratch.Get "id" }}'>
                 <div class="accordion-item">
                   <h4 class="accordion-header" id='header{{ $.Scratch.Get "id" }}'>
                       <button class="accordion-button" data-bs-toggle="collapse" data-bs-target='#collapse{{ $.Scratch.Get "id" }}' aria-expanded="true" aria-controls='collapse{{ $.Scratch.Get "id" }}'>
@@ -78,10 +77,10 @@ where fileName is the file's name with `.json` removed from the end
                   </div>
                 </div>
               </div>
-            </div>
         {{ end }}
       {{ end }}
     {{ end }}
     </div>
   </div>
+
 </div>

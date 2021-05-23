@@ -167,7 +167,7 @@ $alert-border-scale:                0;
 $alert-color-scale:                 0;
 
 $accordion-bg:                            $body-bg;
-$accordion-border-color:                  $body-bg;
+
 $accordion-color:                         $body-color;
 
 $accordion-button-color:                  $body-color;
@@ -179,3 +179,5 @@ $accordion-button-active-color:           $accordion-color;
 $accordion-icon-color:                    $jitsuin-red;
 $accordion-icon-active-color:             $jitsuin-red;
 
+$accordion-padding-y:                     1rem;
+$accordion-button-padding-y:              1.25rem;

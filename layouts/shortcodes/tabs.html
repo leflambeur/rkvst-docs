@@ -34,7 +34,7 @@
 				{{- if ne .ResourceType "page" -}}
 				{{- /* Assume it is a file that needs code highlighting. */ -}}
 				{{- $codelang := $e.codelang | default ( path.Ext .Name | strings.TrimPrefix ".") -}}
-				{{- highlight .Content $codelang "" -}}
+				{{- highlight $codelang .Content  "" -}}
 				{{- else -}}
 					{{- .Content -}}
 				{{- end -}}
