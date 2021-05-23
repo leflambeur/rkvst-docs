@@ -72,11 +72,13 @@ This is markdown.
 ```
 
 And with Bash
+
 <pre><code>
 ```bash
 echo "This is a Bash Example."
 ```
 </code></pre>
+
 
 ```bash
 echo "This is a Bash Example."
@@ -110,6 +112,9 @@ func main() {
 {{< /tab >}}}
 {{< /tabs >}}
 
+## Adding OpenAPI Docs (Swagger v3)
+
+The OpenAPI
 
 ## Callouts and Blocked Quotes
 

@@ -50,10 +50,13 @@ body.dark .toggle-dark {
   display: none;
 }
 
-.btn-clipboard {
+.btn-clipboard{
   display: block;
-  position: relative;
+  position: absolute;
+  right: 20px
+
 }
+
 
 .copy-status::after {
   content: "Copy";
