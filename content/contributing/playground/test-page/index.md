@@ -13,4 +13,11 @@ weight: 999
 toc: true
 ---
 
-{{< openapi url="https://raw.githubusercontent.com/jitsuin-inc/archivist-docs/master/doc/openapi/access_policies.swagger.json" >}}
+{{< tabs name="tabs_with_image" >}}
+{{{< tab name="Images" codelang="" >}}
+{{< img src="Jitsuin_Logo_RGB_Spot.png" alt="Rectangle" caption="<em>Jitsuin Logo Example</em>" class="border-0" >}}
+{{< /tab >}}
+{{< tab name="Go" codelang="go" >}}
+println "This is a Go Example."
+{{< /tab >}}}
+{{< /tabs >}}
