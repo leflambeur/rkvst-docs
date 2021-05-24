@@ -216,17 +216,22 @@ Block Quotes do respect some Markdown Syntax though which means you can implemen
 
 Tables are useful for demonstrating a range of information, they can also be rendered in most markdown flavours using ascii denominations.
 
-Rendering Markup Tables can be difficult, you may wish to make use of an online tool like [Markdown Table Generator](https://www.tablesgenerator.com/markdown_tables) to help.
+We use a mixture of markdown and a custom Hugo shortcode to format tables correctly; markdown is used to define the entries in each row and column in a more visual format, and then the encapsulating shortcode is used to parse the resultant html with the correct formatting options (and according to our style guide these are the `table-striped` and `table-bordered` options).
+
+Rendering Markdown Tables can be difficult from scratch, you may wish to make use of an online tool like [Markdown Table Generator](https://www.tablesgenerator.com/markdown_tables) to help.
 
 ```md
+{{</* table >}}
 |  Column 1 | Column 2  |
 |-----------|-----------|
 |  Cell 1   | Cell 2    |
+{{< /table */>}}
 ```
-
+{{< table >}}
 |  Column 1 | Column 2  |
 |-----------|-----------|
 |  Cell 1   | Cell 2    |
+{{< /table >}}
 
 ## Links
 

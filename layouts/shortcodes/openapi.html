@@ -41,7 +41,7 @@ where fileName is the file's name with `.json` removed from the end
                       <h5>{{ $pathDetails.summary }}</h5>
                       <p><a href="{{ $pathDetails.externalDocs.url }}">{{ $pathDetails.externalDocs.description}}</a></p>
                       <p>Description: {{ $pathDetails.description | markdownify }}</p>
-                      <table class="table table-striped">
+                      <table class="table table-striped table-bordered">
                         <thead>
                           <tr>
                             <th scope="col">Responses</th>
@@ -54,7 +54,7 @@ where fileName is the file's name with `.json` removed from the end
                           {{ end }}
                         </tbody>
                       </table>
-                      <table class="table table-striped">
+                      <table class="table table-striped table-bordered">
                         <thead>
                           <tr>
                             <th scope="col">Parameter</th>

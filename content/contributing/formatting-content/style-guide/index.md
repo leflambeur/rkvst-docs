@@ -15,6 +15,126 @@ toc: true
 
 It is important in any documentation to have a readable, sane and consistent experience, to that end we have defined some guidelines to ensure all content meets the same standard.
 
+## Documentation Structure
+
+Content is organised at a directory level using the standard Hugo format, we then have four seperate areas of content.
+
+Typically, only Docs should be edited but permission to add to the other sections will be decided on a case by case basis by Jitsuin Emplyees and Organizational Reviewers.
+
+{{< tabs name="directory_structure" >}}
+{{< tab name="Root" codelang="bash" >}}
+.
+├── archetypes
+├── assets
+├── babel.config.js
+├── CHANGELOG.md
+├── CODE_OF_CONDUCT.md
+├── config
+├── content
+├── data
+├── images
+├── jitsuin-doks
+├── layouts
+├── LICENSE
+├── netlify.toml
+├── node_modules
+├── package.json
+├── package-lock.json
+├── README.md
+├── resources
+├── static
+└── theme.toml
+{{< /tab >}}
+{{< tab name="Content" codelang="bash" >}}
+.
+├── contributing
+├── docs
+├── _index.md
+├── privacy-policy
+├── sales
+└── support
+{{< /tab >}}
+{{< tab name="Docs" codelang="bash" >}}
+.
+├── _index.md
+├── overview
+├── quickstart
+├── setup-and-administration
+└── user-patterns
+{{< /tab >}}
+{{< /tabs >}}
+
+### Articles and Sections
+
+The Jitsuin Docs are primarily written in `Articles`, individual bodies of text, which are then organised by `Sections` that belong to an `Area` such as Docs or Contributing.
+
+At a directory level this looks like this:
+
+```bash
+./content/docs/quickstart/when-who-did-what-to-a-thing/index.md
+```
+
+Where under the root content folder we can see the `docs` area, followed by the `quickstart` section, containing the article `when-who-did-what-to-a-thing`.
+
+Note that all of these are directories, ending in the file `index.md`, where the actual content of the article is written to.
+
+Every Article and Section contains an `index.md` file with some slight differences in the name depending on which type you are dealing with.
+
+* Articles use `index.md` which represents a standard content file
+* Sections use `_index.md` which has special significance as it will automatically index all of the sub-folders and their `index.md` files
+
+Both of these may be prefilled using a template described in the `Archetypes` folder when using the `jitsuin-doks` wrapper to create content.
+
+In terms of naming convention, at the directory level you should always use a sluggified name that represents the title of the Article or Section you are creating.
+
+For example, `When Who Did What to a Thing` becomes `when-who-did-what-to-a-thing`.
+
+This is important as not only will that be represented at a URL level when accessing the docs; the `jitsuin-doks` wrapper will also be able to prefill the titles of `index.md` files in any templates. 
+
+{{< caution >}}
+**Caution:** Title rendering in templates is not perfect, you should always verify the title of an Article or Section is correct in the metadata manually.
+{{< /caution >}}
+
+Follow these links for more information on adding [Articles](../../adding-content/adding-articles-to-jitsuin-docs/) or [Sections](../../adding-content/adding-content-sections-to-jitsuin-docs/) to Jitsuin Docs.
+
+### Article Metadata
+
+The standard template for both Docs and Contributing is as follows:
+
+```toml
+---
+title: "Style Guide"
+description: "Documentation Style Guide"
+lead: "Documentation Style Guide"
+date: 2021-05-20T19:23:22+01:00
+lastmod: 2021-05-20T19:23:22+01:00
+draft: false
+images: []
+menu: 
+  contributing:
+    parent: "formatting-content"
+weight: 8
+toc: true
+---
+```
+
+While most of this will come prefilled you will need to make sure the correct details are filled in when publishing, some parameters ar enot required but should not be deleted.
+
+{{< table >}}
+|Parameter|Required|Description|
+|---------|--------|-----------|
+|`title`|True| Title of the Article (will be rendered as the top level header) |
+|`description`|True|Description of the Article (will be used when the article is searched)|
+|`lead`|True|Should match the description of the Article|
+|`date`|False|This should be auto-generated but is not used|
+|`lastmod`|False|This is the last time the document was modified, this is not necessary as we can use Git Blame to track when something was changed more effectively|
+|`draft`|True|When set to `true` the article will not be published on the site, by default this is set to `false` as drafting should be done locally before being merged|
+|`images`|False|This is not needed as images should be in the same directory|
+|`menu`|True|This is required to have the left-sidebar work correctly, you should mark the `Area` this article belongs to as a key and then the `Section` aginst the `parent` value like the example|
+|`weight`|True|This is required to place the article in the correct order on the left-sidebar and also the navigation buttons on the bottom of the page it will affect the order acros the entire `Area`, not just the `Section`|
+|`toc`|True|Standing for 'Table of Contents' this enables the Article to be listed in the left-sidebar, should be set to `true` by default|
+{{< /table >}}
+
 ## Headings
 
 When seperating Articles into Topics and Subsections it is preferred to use Headings as a delimiter instead of alternatives like Horizontal Rules.
@@ -42,6 +162,8 @@ We follow [Chicago Manual of Style](https://en.wikipedia.org/wiki/Title_case) Ca
 ## Example Header 2
 ### Example Header 3
 ```
+
+Follow this link for more information on using [Headings](../basic-markdown-formatting/#headings) in markdown.
 
 ## Body
 
@@ -104,7 +226,7 @@ If a nested quote is being used then you may use `"`.
 
 Emphasis should be used minimally but can be effective to highlight key words and phrases inside of a sentence that need specific attention.
 
-In most scenarios it is preferable to use a [callout]() instead.
+In most scenarios it is preferable to use a [callout](./#callouts-and-blockquotes) instead.
 
 Use of Emphasis to highlight words differs to the usage of inline code references.
 
@@ -126,6 +248,8 @@ This action is available ***only*** to **Root Users**.
 
 This action is available ***only*** to **Root Users**.
 
+Follow this link for more information on using [Emphasis](../basic-markdown-formatting/#emphasis) in markdown
+
 ### Linebreaks
 
 Inserting manual linebreaks is not usually necessary to include as Markdown is very effective at rendering most scenarios.
@@ -135,6 +259,8 @@ However in a situation where the rendering is not working it is permitted to use
 ## Lists
 
 We support both ordered and unordered lists in markdown.
+
+Follow this link for details on implementing [Lists](../basic-markdown-formatting/#creating-lists) in markdown.
 
 ### Ordered Lists
 
@@ -249,14 +375,50 @@ Where possible when writing code examples you should use Tabbed Codeblocks to of
 
 This creates a much more accessible and useful documentation platform for any and all users.
 
+Tabbed Codeblocks can be created using the following reference:
+
+```go
+{{</* tabs name="tab_with_code" >}}
+{{< tab name="Bash" codelang="bash" >}}
+echo "This is a Bash Example."
+{{< /tab >}}
+{{< tab name="Go" codelang="go" >}}
+println "This is a Go Example."
+{{< /tab >}}}
+{{< /tabs */>}}
+```
+
+Tab content is always rendered as code and should be written without special formatting where possible to allow the syntax highlighting to work as intended.
+
 Where possible the following languages should be offered as examples in this order:
 
-* `json` - a raw JSON Example of the data being submitted
-* `bash` - curl implementation of interacting with the endpoint
-* `python` - python implementation of interacting with the endpoint
-* `go` -  go implementation of interacting with the endpoint
+* `JSON` - A raw JSON Example of the data being submitted
+* `Bash` - Curl implementation of interacting with the endpoint
+* `Python` - Python implementation of interacting with the endpoint
+* `Go` -  Go implementation of interacting with the endpoint
 
-As Jitsuin RKVST is primarily an API there are different requirements for each type of request:
+Each set of tabs on a page needs a unique name to be permitted, the name should be a sane description of the example being shown.
+
+The title of the tabs should match the language descriptions above, with the following example:
+
+{{< tabs name="tab_with_code" >}}
+{{< tab name="JSON" codelang="json" >}}
+{
+  "Example": "JSON"
+}
+{{< /tab >}}
+{{< tab name="Bash" codelang="bash" >}}
+echo "This is a Bash Example."
+{{< /tab >}}
+{{< tab name="Python" codelang="bash" >}}
+print "This is a Python Example."
+{{< /tab >}}
+{{< tab name="Go" codelang="go" >}}
+println "This is a Go Example."
+{{< /tab >}}
+{{< /tabs >}}
+
+As Jitsuin RKVST is primarily an API there are different requirements for each type of example:
 
 {{< tabs name="tabbed_api_requirements" >}}
 {{< tab name="GET" codelang="md" >}}
@@ -310,7 +472,32 @@ Preferably:
 * python
 * go
 {{< /tab >}}}
+{{< tab name="SCRIPT" codelang="md" >}}
+This refers to any kind of scripted example of multiple calls
+
+Minimum:
+* bash
+or
+* python
+
+Preferably:
+* bash
+* python
+* go
+{{< /tab>}}
 {{< /tabs >}}
+
+### OpenAPI Docs
+
+Rendering OpenAPI docs is done using another custom made shortcode:
+
+```go
+{{</* openapi url="https://raw.githubusercontent.com/jitsuin-inc/archivist-docs/master/doc/openapi/access_policies.swagger.json" */>}}
+```
+
+When making an Article for API Docs the body should only contain the OpenAPI shortcode pointed at the URL of the OpenAPI spec to be rendered.
+
+The title of the Rendered Article needs to be entered into the metadata manually and should match the title of the API as described in the OpenAPI spec being rendered.
 
 ## Callouts and Blockquotes
 
@@ -321,6 +508,8 @@ Preferably:
 ### Warnings
 
 ### Blockquotes
+
+## Tables
 
 ## Links
 
