@@ -567,11 +567,13 @@ Tables use markdown formatting to work, use of a markup table generator simplifi
 
 Tables should always use the `table` shortcode like so:
 
-{{< table >}}
+```md
+{{</* table >}}
 |  Column 1 | Column 2  |
 |-----------|-----------|
 |  Cell 1   | Cell 2    |
 {{< /table */>}}
+```
 
 {{< table >}}
 |  Column 1 | Column 2  |
