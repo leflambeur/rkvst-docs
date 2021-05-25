@@ -487,6 +487,8 @@ Preferably:
 {{< /tab>}}
 {{< /tabs >}}
 
+One more usecase to consider is when a screenshotted example is used; this is discussed below in [Inserting Example Screenshots](./#inserting-example-screenshots)
+
 ### OpenAPI Docs
 
 Rendering OpenAPI docs is done using another custom made shortcode:
@@ -501,25 +503,188 @@ The title of the Rendered Article needs to be entered into the metadata manually
 
 ## Callouts and Blockquotes
 
+Adding Callouts and Blockquotes can be very useful to highlight interesting or specific information that users should be aware of.
+
+Callouts come in three flavours; Note, Caution and Warning that use encapsulating shortcode depending on the case.
+
+When writing a callout you should always start with the type of callout bolded, see below for examples.
+
 ### Notes
+
+To add a note use the following syntax, notes are always highlighted by a left ***purple*** border.
+
+```go
+{{</* note >}}
+**Note:** This is a note.
+{{< /note */>}}
+```
+
+
+{{< note >}}
+**Note:** This is a note.
+{{< /note >}}
 
 ### Cautions
 
+To add a caution use the following syntax, cautions are always highlighted by a left ***yellow*** border.
+
+```go
+{{</* caution >}}
+**Caution:** This is a caution.
+{{< /caution */>}}
+```
+
+{{< caution >}}
+**Caution:** This is a caution.
+{{< /caution >}}
+
 ### Warnings
+
+To add a warning use the following syntax, warnings are always highlighted by a left ***red*** border.
+
+```go
+{{</* warning >}}
+**Warning:** This is a warning.
+{{< /warning */>}}
+```
+
+{{< warning >}}
+**Warning:** This is a warning.
+{{< /warning >}}
 
 ### Blockquotes
 
+While use of callouts is freely permitted, use of pure blockquotes is restricted to specific cases:
+
+* A longer quote is emplyed
+* A piece of text, neither or callout, needs to be differentiated from the main body
+
+Blockquotes do not always read as well as other elements so should not be relied on extensively.
+
 ## Tables
+
+Tables use markdown formatting to work, use of a markup table generator simplifies usage where possible, see the [Tables Section in the Advanced Formatting Guide](../advanced-formatting/#tables).
+
+Tables should always use the `table` shortcode like so:
+
+{{< table >}}
+|  Column 1 | Column 2  |
+|-----------|-----------|
+|  Cell 1   | Cell 2    |
+{{< /table */>}}
+
+{{< table >}}
+|  Column 1 | Column 2  |
+|-----------|-----------|
+|  Cell 1   | Cell 2    |
+{{< /table >}}
+
+This ensures all tables are formatted correctly using the `table-striped` and `table-bordered` property.
+
+Tables without those properties are not permitted.
 
 ## Links
 
+Links to other sections of documentation or external resources should use the standard markdown notation:
+
+```md
+[This is a link](https://info.jitsuin.com/demo-request)
+```
+
+Other forms of links such as using `<a>` tags will not be permitted.
+
 ### Section References
+
+To reference another part of the docs you should always as be as specific as possible, for example:
+
+```md
+[The links formatting guide](../advanced-formatting/#links)
+```
+
+In this example `../` implies the content is in another article, `advanced-formatting` is the sluggified name of the article, `#` can then be used to specify the sluggified name of the topic in that article (in this case `#links`).
+
+To refer to a topic in the same article use `./#your-section` instead of `
+
+To refer to another section it is necessary to use `../../` instead and then follow on from there.
+
+While it is permitted to only specify the article name and not include a `#` reference to the topic, ideally you should be as specific as possible where appropriate.
 
 ### External Links
 
+External Links are not generally permitted as Jitsuin has little to no control on the content being presented and if it is change dor moved in future.
+
+If you would like to include an external link then it will be decided on a case by case basis.
+
 ## Images
+
+Images should be used sparingly and we encourage users to not commit images to the main repository unless necessary (e.g. static images such as logos).
+
+If an image does need to be added it should be included in the folder of the Article.
+
+All images should be `PNG` files.
 
 ### Standard Images
 
+Standard images can be included using the `image` shortcode.
+
+{{</* img src="AssetCreationDetails.png" alt="Rectangle" caption="<em>Asset Creation Example</em>" class="border-0" */>}}
+
+{{< img src="AssetCreationDetails.png" alt="Rectangle" caption="<em>Asset Creation Example</em>" class="border-0" >}}
+
+Images should appear readable and legible across both Light Mode and Dark Mode, if it does not then you need to use the `imgDark` shortcode as described in the [next topic](./#light-mode-and-dark-mode-images).
+
+All images should use the `Rectangular` alt value, `border-0` class and captions should use the `<em>` tags to encapsulate text.
+
 ### Light Mode and Dark Mode Images
+
+When a particular image does not suit either the Dark or Light Theme it will be necessary to specify two images instead.
+
+You can do this using the special `imgDark` shortcode.
+
+{{< imgDark src="Jitsuin_Logo_RGB.png" srcDrk="Jitsuin_WhtType_RGB.png" alt="Rectangle" caption="<em>Jitsuin Dark Mode Logo Example</em>" class="border-0" >}}
+
+All images should use the `Rectangular` alt value, `border-0` class and captions should use the `<em>` tags to encapsulate text.
+
+### Inserting Example Screenshots
+
+Screenshots in Jitsuin are generated using the Robot Framework and are generated automatically so that they can be maintained and kept up to date with as little human involvement as possible.
+
+Any screenshots that accompany steps in a process to follow should be generated using Robot, you should also accompany steps like this with example code using the [Tabbed Codeblocks](./#tabbed-codeblocks).
+
+To specify an image in a Tabbed Codeblock you need to remove the code language, take the following example:
+
+{{< tabs name="tab_with_image_example" >}}
+{{< tab name="Image" codelang="" >}}
+{{< img src="AssetCreationDetails.png" alt="Rectangle" caption="<em>Asset Creation Example</em>" class="border-0" >}}
+{{< /tab >}}
+{{< tab name="JSON" codelang="json" >}}
+{
+    "behaviours": ["Firmware", "Maintenance", "RecordEvidence", "LocationUpdate", "Attachments"],
+    "attributes": {
+        "arc_firmware_version": "",
+        "arc_serial_number": "",
+        "arc_display_name": "",
+        "arc_description": "",
+        "arc_home_location_identity": "",
+        "arc_display_type": "",
+        "some_custom_attribute": "",
+        "arc_attachments": [
+            {
+                "arc_display_name": "",
+                "arc_attachment_identity": "",
+                "arc_hash_alg": "",
+                "arc_hash_value": ""
+            }
+        ]
+    }
+}
+{{< /tab >}}
+{{< tab name="Bash" codelang="bash" >}}
+curl -v -X POST \
+    -H "@$BEARER_TOKEN_FILE" \
+    -H "Content-type: application/json" \
+    -d "@/path/to/jsonfile" \
+    $URL/archivist/v2/assets
+{{< /tab >}}
+{{< /tabs >}}
 
