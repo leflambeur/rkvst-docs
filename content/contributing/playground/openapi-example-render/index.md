@@ -13,4 +13,5 @@ weight: 999
 toc: true
 ---
 
-{{< openapi url="https://raw.githubusercontent.com/jitsuin-inc/archivist-docs/master/doc/openapi/access_policies.swagger.json" >}}
+{{< openapi url="https://raw.githubusercontent.com/jitsuin-inc/archivist-docs/master/doc/openapi/assetsv2.swagger.json" >}}
+

@@ -501,6 +501,8 @@ When making an Article for API Docs the body should only contain the OpenAPI sho
 
 The title of the Rendered Article needs to be entered into the metadata manually and should match the title of the API as described in the OpenAPI spec being rendered.
 
+For an example of how this renders please see [the example OpenAPI Render Page](../../playground/openapi-example-render) in the Playground.
+
 ## Callouts and Blockquotes
 
 Adding Callouts and Blockquotes can be very useful to highlight interesting or specific information that users should be aware of.
@@ -623,7 +625,7 @@ Images should be used sparingly and we encourage users to not commit images to t
 
 If an image does need to be added it should be included in the folder of the Article.
 
-All images should be `PNG` files.
+All images should be `.png` files.
 
 ### Standard Images
 
@@ -639,7 +641,7 @@ All images should use the `Rectangular` alt value, `border-0` class and captions
 
 ### Light Mode and Dark Mode Images
 
-When a particular image does not suit either the Dark or Light Theme it will be necessary to specify two images instead.
+When a particular image does not suit either the Dark or Light Theme it will be necessary to specify two images, one for light and one for dark, instead.
 
 You can do this using the special `imgDark` shortcode.
 
@@ -653,10 +655,12 @@ Screenshots in Jitsuin are generated using the Robot Framework and are generated
 
 Any screenshots that accompany steps in a process to follow should be generated using Robot, you should also accompany steps like this with example code using the [Tabbed Codeblocks](./#tabbed-codeblocks).
 
-To specify an image in a Tabbed Codeblock you need to remove the code language, take the following example:
+The name of the tab if sharing screen shots should be 'UI'.
+
+To specify an image in a Tabbed Codeblock you need to remove the `codelang` value, take the following example:
 
 {{< tabs name="tab_with_image_example" >}}
-{{< tab name="Image" codelang="" >}}
+{{< tab name="UI" codelang="" >}}
 {{< img src="AssetCreationDetails.png" alt="Rectangle" caption="<em>Asset Creation Example</em>" class="border-0" >}}
 {{< /tab >}}
 {{< tab name="JSON" codelang="json" >}}
