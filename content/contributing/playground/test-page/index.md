@@ -13,4 +13,24 @@ weight: 998
 toc: true
 ---
 
-{{< img src="1920x1080-test.png" alt="Rectangle" caption="<em>~1920x1080</em>" class="border-0" >}}
+<!-- Tribe Tag -->
+<script>
+  (function(t,r,i,b,e){
+    if(typeof t.Tribe==='function'){t.Tribe('reload',{portal:i});}
+    else{b=function(){b.r(arguments);};b.q=[];b.r=function(args){b.q.push(args);};
+    t.Tribe=b; e=r.createElement('script');e.type='text/javascript';e.async=true;
+    e.src=i+'/widget/v1/main.js?t='+Math.ceil(new Date() / 3e5) * 3e5;
+    var x=r.getElementsByTagName('script')[0];x.parentNode.insertBefore(e,x);
+    t.Tribe('boot',{portal:i});}
+  })(window,document,'{https://jitsuin.tribe.so}');
+</script>
+
+<div id="topic-widget"></div>
+<script>
+  window.Tribe('topic', {
+    id: 'topic-widget',     
+    slug: 'test-topic',
+    components: ['breadcrumb', 'sidebar', 'header', 'suggestions', 'input'],
+    feedLimit: 5
+  })
+</script>
