@@ -12,3 +12,5 @@ menu:
 weight: 998
 toc: true
 ---
+
+{{< img src="1920x1080-test.png" alt="Rectangle" caption="<em>~1920x1080</em>" class="border-0" >}}
