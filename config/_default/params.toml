@@ -31,9 +31,9 @@ themeColor = "#fff"
 # Images
 quality = 100
 bgColor = "#fff"
-landscapePhotoWidths = [900, 800, 500, 200]
+landscapePhotoWidths = [1000, 800, 500, 200]
 portraitPhotoWidths = [900, 800, 500]
-lqipWidth = "100x"
+lqipWidth = "1x"
 
 # Footer
 footer = "Powered by <a href=\"https://gohugo.io/\">Hugo</a> and <a href=\"https://getdoks.org/\">Doks</a>"
