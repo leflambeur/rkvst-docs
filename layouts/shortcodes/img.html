@@ -1,7 +1,7 @@
 {{ $image := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) -}}
 {{ $lqip := $image.Resize $.Site.Params.lqipWidth -}}
 
-{{ $label := (split (.Get "src") ".png") }}
+{{ $label := index (split (.Get "src") ".png") 0 }}
 
 {{ $imgSrc := "" -}}
 {{ $imgSrcSet := slice -}}
