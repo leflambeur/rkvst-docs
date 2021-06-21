@@ -137,6 +137,13 @@ body.dark .btn-copy:hover::after {
   color: $color-btn-text;
 }
 
+body.dark .btn-copy:focus::after,
+.btn-copy:active::after {
+  content: "Copied";
+  display: block;
+  color: $color-btn-text;
+}
+
 .collapsible-sidebar {
   margin: 2.125rem 0;
 }
