@@ -135,6 +135,7 @@ body.dark .btn-copy:hover::after {
   content: "Copied";
   display: block;
   color: $color-btn-text;
+  transition-delay: 1s;
 }
 
 body.dark .btn-copy:focus::after,
@@ -142,6 +143,7 @@ body.dark .btn-copy:focus::after,
   content: "Copied";
   display: block;
   color: $color-btn-text;
+  transition-delay: 1s;
 }
 
 .collapsible-sidebar {
