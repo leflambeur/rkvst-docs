@@ -136,6 +136,7 @@ body.dark .btn-copy:hover::after {
   display: block;
   color: $color-btn-text;
   transition-delay: 1s;
+  transition-duration: 1s;
 }
 
 body.dark .btn-copy:focus::after,
@@ -144,6 +145,7 @@ body.dark .btn-copy:focus::after,
   display: block;
   color: $color-btn-text;
   transition-delay: 1s;
+  transition-duration: 1s;
 }
 
 .collapsible-sidebar {
