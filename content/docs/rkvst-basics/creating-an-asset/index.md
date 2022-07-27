@@ -12,7 +12,7 @@ menu:
 weight: 2
 toc: true
 aliases:
-  - /docs/quickstart/creating-an-asset/
+  - ../quickstart/creating-an-asset
 ---
 
 As discussed in the previous section, An Asset can be anything: an IOT Sensor, a Shipping Container or even a Purchase Order. Any kind of object, physical or otherwise, which has a Name, Description and Attributes associated with it.
