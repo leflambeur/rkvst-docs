@@ -1,2 +1,2 @@
 # redirects for Netlify - https://www.netlify.com/docs/redirects/
-/rkvst-docs/docs/quickstart/creating-an-asset /docs/rkvst-basics/creating-an-asset/
+/docs/quickstart/creating-an-asset/ /docs/rkvst-basics/creating-an-asset/
