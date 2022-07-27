@@ -37,8 +37,8 @@
 [[docs]]
   name = "Quickstart"
   weight = 3
-  identifier = "quickstart"
-  url = "/docs/quickstart/"
+  identifier = "rkvst-basics"
+  url = "/docs/rkvst-basics"
 
 [[docs]]
   name = "Setup and Administration"
